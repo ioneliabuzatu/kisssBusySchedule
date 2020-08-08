@@ -1,0 +1,6 @@
+COURSE_SEARCH_PAGE = "/html/body/table/tbody/tr[2]/td[1]/div/ul/li[3]/ul/li[1]/a"
+DETAILED_SEARCH = "/html/body/table/tbody/tr[2]/td[2]/table/tbody/tr[2]/td/div/form/table/tbody/tr[2]/td[4]/table/tbody/tr/td[2]/b/a"
+ENGLISH_LANGUAGE = "/html/body/table/tbody/tr[1]/td/div[1]/div/div/ul/li[2]/a"
+AI_CURRICULUM = "/html/body/table/tbody/tr[2]/td[2]/table/tbody/tr[2]/td/div/form/table/tbody/tr[7]/td[2]/select/option[105"
+SEARCH_BUTTON = "/html/body/table/tbody/tr[2]/td[2]/table/tbody/tr[2]/td/div/form/table/tbody/tr[12]/td[2]/input[2]"
+ALL_AI_COURSES_2020W = "/html/body/table/tbody/tr[2]/td[2]/table/tbody/tr[2]/td/div/table[2]/tbody/tr"
