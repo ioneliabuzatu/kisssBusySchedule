@@ -1,8 +1,4 @@
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.common.by import By
 
 from defaults import COURSE_SEARCH_PAGE
 from defaults import DETAILED_SEARCH
@@ -16,19 +12,6 @@ driver.get('https://www.kusss.jku.at/')
 
 timeout = 10
 
-try:
-    # element = wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@class='content' and text()='Load More']")))
-    WebDriverWait(driver, timeout).until(expected_conditions.visibility_of_element_located((By.ID, "productTitle")))
-except TimeoutException:
-    print('Timed out waiting for page to load')
-    driver.quit()
-
-username = input()
-password = input()
-
-driver.find_element_by_id("j_username").send_keys(username)
-driver.find_element_by_id("j_password").send_keys(password)
-driver.find_element_by_class_name("submit").click()
 driver.find_element_by_xpath(COURSE_SEARCH_PAGE).click()
 driver.find_element_by_xpath(DETAILED_SEARCH).click()
 driver.find_element_by_xpath(ENGLISH_LANGUAGE).click()
@@ -44,14 +27,24 @@ def extract_data():
     :return: semester_timetable
     """
 
-    semester_timetable = None
+    semester_timetable = set()
 
-    for i, row in enumerate(all_rows):
-        if i == 0:
+    for r, row in enumerate(all_rows):
+        if r == 0:
             continue
         else:
-            print(row.find_element_by_css_selector("td[align='center']").text)
             cols_per_row = row.find_elements_by_css_selector("td")
-            print(len(cols_per_row))
-            for col in cols_per_row:
-                print(col.text)
+            courseDesiredInfo = []
+            for c, col in enumerate(cols_per_row):
+                if c == 1:
+                    courseDesiredInfo.append(col.text)
+                elif c == 2:
+                    courseDesiredInfo.append(col.text)
+                elif c == 8:
+                    courseDesiredInfo.append((col.text.split("\n")[0]))
+
+            semester_timetable.add(tuple(courseDesiredInfo))
+            print(semester_timetable)
+
+
+extract_data()
