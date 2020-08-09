@@ -114,42 +114,31 @@ void MainWindow::insertCalendar() {
         cellCursor.insertText(QLocale::system().dayName(weekDay - 1), boldFormat);
     }
 
-    int rows = 10;
-    while(rows>0) {
+    int rows = 12;
+    int rowIndex = 1;
+    std::vector<QString> hours{"8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"};
+    while (rows >= 0) {
         table->insertRows(table->rows(), 1);
+
+        QTextTableCell cell = table->cellAt(rowIndex, 0);
+        QTextCursor cellCursor = cell.firstCursorPosition();
+        cellCursor.insertText(hours[rowIndex - 1], boldFormat);
         rows--;
+        rowIndex++;
     }
 
     int tmp = 5;
-    while(tmp>0) {
+    while (tmp > 0) {
         QTextTableCell cell = table->cellAt(table->rows() - 1, tmp);
         QTextCursor cellCursor = cell.firstCursorPosition();
         cellCursor.insertText("hello", highlightedFormat);
-
-//        if (weekDay == 7 && date.month() == selectedDate.month())
-//            table->insertRows(table->rows(), 1);
-//        table->insertRows(10, 1);
         tmp--;
     }
 
-//    while (date.month() == selectedDate.month()) {
-//        int weekDay = date.dayOfWeek();
-//        QTextTableCell cell = table->cellAt(table->rows() - 1, weekDay - 1);
-//        QTextCursor cellCursor = cell.firstCursorPosition();
-//
-//        if (date == QDate::currentDate())
-//            cellCursor.insertText(QString("%1").arg(date.day()), highlightedFormat);
-//        else
-//            cellCursor.insertText(QString("%1").arg(date.day()), format);
-//
-//        date = date.addDays(1);
-//        if (weekDay == 7 && date.month() == selectedDate.month())
-//            table->insertRows(table->rows(), 1);
-//    }
 
     cursor.endEditBlock();
 
-    setWindowTitle(tr("My Weekly preregistration courses"));
+    setWindowTitle(tr("My weekly preregistration courses"));
 
 }
 
