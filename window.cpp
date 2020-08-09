@@ -1,7 +1,14 @@
 #include "window.h"
-
 #include <QtWidgets>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <algorithm>
+#include <unordered_map>
 
+
+using namespace std;
 
 MainWindow::MainWindow() {
     selectedDate = QDate::currentDate();
@@ -57,6 +64,29 @@ MainWindow::MainWindow() {
     centralLayout->addLayout(controlsLayout);
     centralLayout->addWidget(editor, 1);
     centralWidget->setLayout(centralLayout);
+
+    string line;
+    string filepath = "/Users/ioneliabuzatu/CLionProjects/kisssBusySchedule/scrapped_data.txt";
+    ifstream myfile;
+
+    std::ifstream infile(filepath);
+
+    while (std::getline(infile, line)) {
+        vector<string> row_values;
+        vector<string> col_row_values;
+
+
+        split(line, ',', row_values);
+
+//        for (auto v: row_values)
+//            cout << v << ',';
+        split(row_values[2], '.', col_row_values);
+        cout << row_values[2];
+//        cout << col_row_va lues[0];
+        cout << endl;
+
+
+    }
 
     setCentralWidget(centralWidget);
 
@@ -136,12 +166,120 @@ void MainWindow::insertCalendar() {
     }
 
 
+    std::unordered_map<string, int> hourToRow = {
+            {"08:00", 1},
+            {"08:15", 1},
+            {"08:30", 1},
+            {"08:45", 1},
+            {"09:00", 2},
+            {"09:15", 2},
+            {"09:30", 2},
+            {"09:45", 2},
+            {"10:00", 3},
+            {"10:15", 3},
+            {"10:30", 3},
+            {"10:45", 3},
+            {"11:15", 4},
+            {"11:30", 4},
+            {"11:45", 4},
+            {"11:00", 4},
+            {"12:00", 5},
+            {"12:15", 5},
+            {"12:30", 5},
+            {"12:45", 5},
+            {"13:00", 6},
+            {"13:15", 6},
+            {"13:30", 6},
+            {"13:45", 6},
+            {"14:00", 7},
+            {"14:15", 7},
+            {"14:30", 7},
+            {"14:45", 7},
+            {"15:00", 8},
+            {"15:15", 8},
+            {"15:30", 8},
+            {"15:45", 8},
+            {"16:00", 9},
+            {"16:15", 9},
+            {"16:30", 9},
+            {"16:45", 9},
+            {"17:00", 10},
+            {"17:15", 10},
+            {"17:30", 10},
+            {"17:45", 10},
+            {"18:00", 11},
+            {"18:15", 11},
+            {"18:30", 11},
+            {"18:45", 11},
+            {"19:00", 12},
+            {"19:15", 12},
+            {"19:30", 12},
+            {"19:45", 12},
+            {"20:00", 12},
+            {"20:15", 12},
+            {"20:30", 12},
+            {"20:45", 12}
+    };
+
+    string line;
+    string filepath = "/Users/ioneliabuzatu/CLionProjects/kisssBusySchedule/scrapped_data.txt";
+    ifstream myfile;
+    int col;
+    std::ifstream infile(filepath);
+
+    while (std::getline(infile, line)) {
+        int ROW;
+        vector<string> row_values;
+        vector<string> dayDatetime;
+        vector<string> startHourDatetime;
+
+
+        split(line, ',', row_values);
+        split(row_values[2], '.', dayDatetime);
+        string day = dayDatetime[0];
+        split(row_values[2], ' ', startHourDatetime);
+        day.erase(remove(day.begin(), day.end(), ' '), day.end());
+        for (auto v:startHourDatetime)
+            cout << v << " ";
+        cout << startHourDatetime[3] << endl;
+        string startHour = startHourDatetime[3];
+        if (day == "Mon") {
+            col = 1;
+        } else if (day == "Tue") {
+            col = 2;
+        } else if (day == "Wed") {
+            col = 3;
+        } else if (day == "Thu") {
+            col = 4;
+        } else if (day == "Fri") {
+            col = 5;
+        }
+
+        ROW = hourToRow[startHour];
+
+        QTextTableCell cell = table->cellAt(ROW, col);
+
+        QTextCursor cellCursor = cell.firstCursorPosition();
+        QString dataToInsert = QString::fromStdString(row_values[0]);
+        cellCursor.insertText(dataToInsert, boldFormat);
+        cellCursor.insertText("\n", boldFormat);
+        col++;
+    }
+
     cursor.endEditBlock();
 
     setWindowTitle(tr("My weekly preregistration courses"));
 
 }
 
+void MainWindow::split(const std::string &s, char delim, std::vector<std::string> &elems) {
+    std::stringstream ss;
+    ss.str(s);
+    std::string item;
+    while (std::getline(ss, item, delim)) {
+        elems.push_back(item);
+    }
+}
 
 void MainWindow::setFontSize(int size) {
     fontSize = size;

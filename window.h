@@ -18,6 +18,8 @@ public:
 
 public slots:
 
+    void split(const std::string &s, char delim, std::vector<std::string> &elems);
+
     void setFontSize(int size);
 
     void setMonth(int month);

@@ -7,6 +7,8 @@ from defaults import AI_CURRICULUM
 from defaults import SEARCH_BUTTON
 from defaults import ALL_AI_COURSES_2020W
 
+from ctypes import cdll
+
 driver = webdriver.Chrome('/usr/local/bin/chromedriver')
 driver.get('https://www.kusss.jku.at/')
 
@@ -47,4 +49,7 @@ def extract_data():
             print(semester_timetable)
 
 
+
+
 extract_data()
+# table = cdll.LoadLibrary("/Users/ioneliabuzatu/CLionProjects/kisssBusySchedule/cmake-build-debug/CMakeFiles/kusssBusySchedule.dir/buildTimetable.cpp.o").main
