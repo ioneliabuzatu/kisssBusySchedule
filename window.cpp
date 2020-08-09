@@ -88,7 +88,7 @@ void MainWindow::insertCalendar() {
     tableFormat.setColumnWidthConstraints(constraints);
 
 
-    QTextTable *table = cursor.insertTable(1, 7, tableFormat);
+    QTextTable *table = cursor.insertTable(1, 6, tableFormat);
 
 
     QTextFrame *frame = cursor.currentFrame();
@@ -107,37 +107,50 @@ void MainWindow::insertCalendar() {
     highlightedFormat.setBackground(Qt::yellow);
 
 
-    for (int weekDay = 1; weekDay <= 7; ++weekDay) {
+    for (int weekDay = 2; weekDay <= 6; ++weekDay) {
         QTextTableCell cell = table->cellAt(0, weekDay - 1);
 
         QTextCursor cellCursor = cell.firstCursorPosition();
-        cellCursor.insertText(QLocale::system().dayName(weekDay), boldFormat);
+        cellCursor.insertText(QLocale::system().dayName(weekDay - 1), boldFormat);
     }
 
+    int rows = 10;
+    while(rows>0) {
+        table->insertRows(table->rows(), 1);
+        rows--;
+    }
 
-    table->insertRows(table->rows(), 1);
-
-
-    while (date.month() == selectedDate.month()) {
-        int weekDay = date.dayOfWeek();
-        QTextTableCell cell = table->cellAt(table->rows() - 1, weekDay - 1);
+    int tmp = 5;
+    while(tmp>0) {
+        QTextTableCell cell = table->cellAt(table->rows() - 1, tmp);
         QTextCursor cellCursor = cell.firstCursorPosition();
+        cellCursor.insertText("hello", highlightedFormat);
 
-        if (date == QDate::currentDate())
-            cellCursor.insertText(QString("%1").arg(date.day()), highlightedFormat);
-        else
-            cellCursor.insertText(QString("%1").arg(date.day()), format);
-
-        date = date.addDays(1);
-        if (weekDay == 7 && date.month() == selectedDate.month())
-            table->insertRows(table->rows(), 1);
+//        if (weekDay == 7 && date.month() == selectedDate.month())
+//            table->insertRows(table->rows(), 1);
+//        table->insertRows(10, 1);
+        tmp--;
     }
+
+//    while (date.month() == selectedDate.month()) {
+//        int weekDay = date.dayOfWeek();
+//        QTextTableCell cell = table->cellAt(table->rows() - 1, weekDay - 1);
+//        QTextCursor cellCursor = cell.firstCursorPosition();
+//
+//        if (date == QDate::currentDate())
+//            cellCursor.insertText(QString("%1").arg(date.day()), highlightedFormat);
+//        else
+//            cellCursor.insertText(QString("%1").arg(date.day()), format);
+//
+//        date = date.addDays(1);
+//        if (weekDay == 7 && date.month() == selectedDate.month())
+//            table->insertRows(table->rows(), 1);
+//    }
 
     cursor.endEditBlock();
 
-    setWindowTitle(tr("Calendar for %1 %2"
-    ).arg(QLocale::system().monthName(selectedDate.month())
-    ).arg(selectedDate.year()));
+    setWindowTitle(tr("My Weekly preregistration courses"));
+
 }
 
 
