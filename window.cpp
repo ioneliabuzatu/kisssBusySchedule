@@ -59,15 +59,10 @@ void Gui::insertCalendar() {
     constraints << QTextLength(QTextLength::PercentageLength, 14)
                 << QTextLength(QTextLength::PercentageLength, 14)
                 << QTextLength(QTextLength::PercentageLength, 14)
-                << QTextLength(QTextLength::PercentageLength, 14)
-                << QTextLength(QTextLength::PercentageLength, 14)
-                << QTextLength(QTextLength::PercentageLength, 14)
                 << QTextLength(QTextLength::PercentageLength, 14);
     tableFormat.setColumnWidthConstraints(constraints);
 
-
     QTextTable *table = cursor.insertTable(1, 6, tableFormat);
-
 
     QTextFrame *frame = cursor.currentFrame();
     QTextFrameFormat frameFormat = frame->frameFormat();
@@ -161,7 +156,7 @@ void Gui::insertCalendar() {
     };
 
     string line;
-    string filepath = "/Users/ioneliabuzatu/CLionProjects/kisssBusySchedule/scraped_data.txt";
+    string filepath = "/Users/ioneliabuzatu/CLionProjects/kisssBusySchedule/resources/scraped-data/scraped_data.txt";
     ifstream myfile;
     int col;
     std::ifstream infile(filepath);

@@ -50,7 +50,7 @@ def extract_data():
 
 semester_courses = extract_data()
 driver.quit()
-with open("./scraped_data.txt", "w") as file:
+with open("./resources/scraped-data/scraped_data.txt", "w") as file:
     for course in semester_courses:
         course_name, course_type, course_hour = course
         if course_hour != "No dates found":
