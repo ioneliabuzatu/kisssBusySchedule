@@ -1,3 +1,4 @@
+import yaml
 from selenium import webdriver
 
 from defaults import COURSE_SEARCH_PAGE
@@ -50,8 +51,10 @@ def extract_data():
 
 semester_courses = extract_data()
 driver.quit()
-with open("./resources/scraped-data/scraped_data.txt", "w") as file:
-    for course in semester_courses:
-        course_name, course_type, course_hour = course
-        if course_hour != "No dates found":
-            file.write(f"{course_name.replace(',', '')}, {course_type}, {course_hour}\n")
+with open("./resources/maya.yaml") as yaml_config:
+    scraped_data_filename = yaml.load(yaml_config)["saveScrapedDataFilename"]
+    with open(f"./resources/scraped-data/{scraped_data_filename}", "w") as file:
+        for course in semester_courses:
+            course_name, course_type, course_hour = course
+            if course_hour != "No dates found":
+                file.write(f"{course_name.replace(',', '')}, {course_type}, {course_hour}\n")

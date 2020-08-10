@@ -3,7 +3,7 @@
 ```Qt5```
 
 
-![](assets/screenshot.png)
+![](resources/assets/screenshot.png)
 
 Run executable 
 ```` ./kusssBusySchedule ````

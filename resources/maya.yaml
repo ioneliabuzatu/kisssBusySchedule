@@ -1,4 +1,2 @@
----
-stuff:
-  saveScrapedDataFilename: "scraped_data.txt"
-  saveScrapedDataFilePath: "/Users/ioneliabuzatu/CLionProjects/kisssBusySchedule/resources/scraped-data/scraped_data.txt"
+saveScrapedDataFilename: "scraped_data.txt"
+saveScrapedDataFilePath: "/Users/ioneliabuzatu/CLionProjects/kisssBusySchedule/resources/scraped-data/scraped_data.txt"
