@@ -54,4 +54,4 @@ with open("./scraped_data.txt", "w") as file:
     for course in semester_courses:
         course_name, course_type, course_hour = course
         if course_hour != "No dates found":
-            file.write(f"{course_name}, {course_type}, {course_hour}\n")
+            file.write(f"{course_name.replace(',', '')}, {course_type}, {course_hour}\n")

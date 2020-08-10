@@ -27,7 +27,6 @@ Gui::Gui() {
 
     fontSizeSpinBox->setValue(10);
 
-
     QHBoxLayout *controlsLayout = new QHBoxLayout;
     controlsLayout->addSpacing(24);
     controlsLayout->addWidget(fontSizeLabel);
@@ -75,7 +74,6 @@ void Gui::insertCalendar() {
     frameFormat.setBorder(1);
     frame->setFrameFormat(frameFormat);
 
-
     QTextCharFormat format = cursor.charFormat();
     format.setFontPointSize(fontSize);
 
@@ -84,6 +82,7 @@ void Gui::insertCalendar() {
 
     QTextCharFormat highlightedFormat = boldFormat;
     highlightedFormat.setBackground(Qt::yellow);
+    highlightedFormat.setForeground(Qt::black);
 
 
     for (int weekDay = 2; weekDay <= 6; ++weekDay) {
@@ -201,7 +200,7 @@ void Gui::insertCalendar() {
 
         QTextCursor cellCursor = cell.firstCursorPosition();
         QString dataToInsert = QString::fromStdString(row_values[0]);
-        cellCursor.insertText(dataToInsert, boldFormat);
+        cellCursor.insertText(dataToInsert, highlightedFormat);
         cellCursor.insertText("\n", boldFormat);
         col++;
     }
