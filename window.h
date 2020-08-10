@@ -10,11 +10,11 @@ class QTextBrowser;
 QT_END_NAMESPACE
 
 
-class MainWindow : public QMainWindow {
+class Gui : public QMainWindow {
 Q_OBJECT
 
 public:
-    MainWindow();
+    Gui();
 
 public slots:
 

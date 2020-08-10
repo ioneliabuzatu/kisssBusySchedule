@@ -10,27 +10,10 @@
 
 using namespace std;
 
-MainWindow::MainWindow() {
-    selectedDate = QDate::currentDate();
+Gui::Gui() {
     fontSize = 10;
 
     QWidget *centralWidget = new QWidget;
-
-
-    QLabel *dateLabel = new QLabel(tr("Date:"));
-    QComboBox *monthCombo = new QComboBox;
-
-    for (int month = 1; month <= 12; ++month)
-        monthCombo->addItem(QLocale::system().monthName(month));
-
-    QDateTimeEdit *yearEdit = new QDateTimeEdit;
-    yearEdit->setDisplayFormat("yyyy");
-    yearEdit->setDateRange(QDate(1753, 1, 1), QDate(8000, 1, 1));
-
-
-    monthCombo->setCurrentIndex(selectedDate.month() - 1);
-    yearEdit->setDate(selectedDate);
-
 
     QLabel *fontSizeLabel = new QLabel(tr("Font size:"));
     QSpinBox *fontSizeSpinBox = new QSpinBox;
@@ -40,7 +23,7 @@ MainWindow::MainWindow() {
     insertCalendar();
 
     connect(fontSizeSpinBox, QOverload<int>::of(&QSpinBox::valueChanged),
-            this, &MainWindow::setFontSize);
+            this, &Gui::setFontSize);
 
     fontSizeSpinBox->setValue(10);
 
@@ -61,12 +44,10 @@ MainWindow::MainWindow() {
 }
 
 
-void MainWindow::insertCalendar() {
+void Gui::insertCalendar() {
     editor->clear();
     QTextCursor cursor = editor->textCursor();
     cursor.beginEditBlock();
-
-    QDate date(selectedDate.year(), selectedDate.month(), 1);
 
 
     QTextTableFormat tableFormat;
@@ -231,7 +212,7 @@ void MainWindow::insertCalendar() {
 
 }
 
-void MainWindow::split(const std::string &s, char delim, std::vector<std::string> &elems) {
+void Gui::split(const std::string &s, char delim, std::vector<std::string> &elems) {
     std::stringstream ss;
     ss.str(s);
     std::string item;
@@ -240,7 +221,7 @@ void MainWindow::split(const std::string &s, char delim, std::vector<std::string
     }
 }
 
-void MainWindow::setFontSize(int size) {
+void Gui::setFontSize(int size) {
     fontSize = size;
     insertCalendar();
 }
