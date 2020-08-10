@@ -1,0 +1,91 @@
+LSTM and Recurrent Neural Nets VL Mon. 05.10.20 15:30 - 17:00
+Stochastic processes UE Tue. 13.10.20 15:30 - 17:00
+Debugging KV Wed. 11.11.20 16:15 - 20:30
+LSTM and Recurrent Neural Nets UE Mon. 12.10.20 13:45 - 15:15
+Machine Learning: Supervised Techniques UE Thu. 08.10.20 12:00 - 13:30
+Medical Imaging UE Mon. 05.10.20 15:30 - 16:15
+Bioanalytics I VO Tue. 06.10.20 17:15 - 18:45
+Control Systems UE Mon. 19.10.20 10:15 - 11:45
+Automated Reasoning VL Wed. 07.10.20 08:30 - 10:00
+Emerging Computer Technologies KV Wed. 07.10.20 12:45 - 15:15
+Probabilistic Models UE No dates found
+Automated Reasoning UE Tue. 06.10.20 12:00 - 12:45
+Automatic Control PR Mon. 05.10.20 13:45 - 15:15
+Automatic Control 2 VO Wed. 07.10.20 08:30 - 10:00
+Model Checking KV Thu. 08.10.20 08:30 - 10:00
+Practical Work in AI (Master) Machine Learning PR Thu. 08.10.20 08:30 - 10:00
+Seminar in AI (Master) Machine Learning SE Thu. 08.10.20 08:30 - 10:00
+Special Topics symbolic computation Computer algebra systems VL No dates found
+Basic Methods of Data Analysis KV Thu. 08.10.20 17:15 - 18:45
+Radar Signal Processing UE Wed. 07.10.20 15:30 - 17:00
+Knowledge Based Systems KV Mon. 12.10.20 15:30 - 17:00
+Molecular biology of the cell I VO Fri. 09.10.20 13:45 - 16:15
+Medical Imaging UE Mon. 05.10.20 16:15 - 17:00
+Sequence Analysis and Phylogenetics UE Fri. 09.10.20 12:00 - 13:30
+Probabilistic Models VL Tue. 06.10.20 09:15 - 11:00
+Topics in Genetics & Evolution KV Tue. 06.10.20 08:15 - 10:00
+Medical Imaging VL Mon. 05.10.20 12:00 - 14:30
+Automatic Control 2 UE Wed. 14.10.20 15:30 - 17:00
+Practical Work in AI (Master) PR No dates found
+Control System Technology 1 VO Thu. 08.10.20 13:45 - 17:00
+Seminar in AI (Master) SE No dates found
+Signal and Systems 2 UE Mon. 12.10.20 12:00 - 13:30
+Pervasive Computing: Systems and Environments VL Wed. 07.10.20 08:30 - 10:00
+Artificial Intelligence in Society KV Mon. 12.10.20 08:30 - 11:45
+Instrumental Analytical Chemistry VL Thu. 08.10.20 10:15 - 11:45
+Molecular biology of the cell I UE No dates found
+Mobile Computing KV Wed. 07.10.20 13:45 - 17:00
+Chemistry for Physicist II VO Wed. 07.10.20 13:45 - 15:15
+Production Automation Systems VL Thu. 08.10.20 10:15 - 11:45
+Signal and Systems 2 UE Mon. 12.10.20 10:15 - 11:45
+Computer Algebra VL Tue. 06.10.20 16:15 - 18:00
+Law for Computer Science VO Mon. 05.10.20 08:30 - 11:45
+Thinking, Speaking, Writing Understanding and Creating Mathematical Proofs VO Tue. 06.10.20 13:45 - 15:15
+Basic Methods of Data Analysis KV No dates found
+Automated Reasoning UE Tue. 06.10.20 12:45 - 13:30
+Special Topics optimization Optimization in Function Spaces VL Tue. 06.10.20 08:30 - 10:00
+Medical technology 2 VL No dates found
+AI and Law I VL Fri. 09.10.20 12:00 - 13:30
+Probabilistic Models (distance learning group) UE No dates found
+Computer Algebra UE Tue. 06.10.20 15:30 - 16:15
+Introduction to Organic Chemistry VL Fri. 06.11.20 10:15 - 11:45
+Control Systems VL Mon. 05.10.20 08:30 - 11:45
+Signal and Systems 2 VO Wed. 07.10.20 08:30 - 10:00
+Pervasive Computing: Systems and Environments UE Wed. 07.10.20 12:00 - 12:45
+Sequence Analysis and Phylogenetics VL Mon. 05.10.20 15:30 - 17:00
+Stochastic processes VO Tue. 06.10.20 13:45 - 15:15
+Visual Analytics UE Tue. 06.10.20 10:15 - 11:45
+Visual Analytics UE Fri. 09.10.20 10:15 - 11:45
+Practical Course on the Foundations of Robotics PR No dates found
+Signal and Systems 2 UE Mon. 05.10.20 15:30 - 17:00
+Project Management KV Mon. 05.10.20 08:30 - 11:45
+Ethics and Gender Studies Gender beyond technological impact assessment VO Tue. 06.10.20 12:45 - 17:00
+Probabilistic Models UE Tue. 06.10.20 11:00 - 11:45
+Seminar in AI (Master) Puzzling Dancing Links SE No dates found
+Deep Learning and Neural Nets I VL Fri. 09.10.20 10:15 - 11:45
+Optimum and Adaptive Signal Processing Systems UE Thu. 22.10.20 13:45 - 15:15
+Automatic Control 2 UE Wed. 14.10.20 13:45 - 15:15
+Knowledge and Data Based Modelling VL Thu. 08.10.20 10:15 - 11:45
+Multimedia Search and Retrieval KV Wed. 07.10.20 13:45 - 16:15
+Automatic Control 2 UE Wed. 14.10.20 12:00 - 13:30
+Machine Learning: Supervised Techniques VL Wed. 07.10.20 15:30 - 17:00
+Pervasive Computing: Design and Development UE Wed. 07.10.20 12:45 - 13:30
+Radar Signal Processing UE No dates found
+Visual Analytics UE Tue. 06.10.20 08:30 - 10:00
+Pervasive Computing: Design and Development VL Wed. 07.10.20 10:15 - 11:45
+Bioanalytics I UE No dates found
+Visual Analytics VL Mon. 05.10.20 10:15 - 11:45
+Radar Signal Processing VO Wed. 07.10.20 13:45 - 17:00
+Project Management KV Mon. 12.10.20 08:30 - 11:45
+Ethics and Gender Studies Biology, Ethics and Gender VO Tue. 06.10.20 15:30 - 17:00
+Visual Analytics UE Fri. 09.10.20 08:30 - 10:00
+Communications Engineering KV Thu. 08.10.20 08:30 - 10:00
+Special Topics in AI Practical Course on Autonomous Driving SE Tue. 06.10.20 13:45 - 17:00
+Basic Methods of Data Analysis KV Thu. 08.10.20 15:30 - 17:00
+Communicating AI KV Fri. 06.11.20 10:15 - 11:45
+Optimum and Adaptive Signal Processing Systems VL Thu. 08.10.20 08:30 - 10:00
+Computer Forensics and IT Law VL Thu. 08.10.20 12:00 - 13:30
+Deep Learning and Neural Nets I UE Mon. 05.10.20 13:45 - 15:15
+Computational Statistics KV Wed. 07.10.20 12:00 - 13:30
+Control System Technology Lab 1 PR Thu. 29.10.20 08:00 - 17:00
+Medical Imaging UE Mon. 05.10.20 14:30 - 15:15
