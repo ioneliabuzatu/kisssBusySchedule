@@ -22,10 +22,6 @@ public slots:
 
     void setFontSize(int size);
 
-    void setMonth(int month);
-
-    void setYear(QDate date);
-
 private:
     void insertCalendar();
 

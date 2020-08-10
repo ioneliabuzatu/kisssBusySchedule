@@ -39,22 +39,13 @@ MainWindow::MainWindow() {
     editor = new QTextBrowser;
     insertCalendar();
 
-
-    connect(monthCombo, QOverload<int>::of(&QComboBox::activated),
-            this, &MainWindow::setMonth);
-    connect(yearEdit, &QDateTimeEdit::dateChanged,
-            this, &MainWindow::setYear);
     connect(fontSizeSpinBox, QOverload<int>::of(&QSpinBox::valueChanged),
             this, &MainWindow::setFontSize);
-
 
     fontSizeSpinBox->setValue(10);
 
 
     QHBoxLayout *controlsLayout = new QHBoxLayout;
-    controlsLayout->addWidget(dateLabel);
-    controlsLayout->addWidget(monthCombo);
-    controlsLayout->addWidget(yearEdit);
     controlsLayout->addSpacing(24);
     controlsLayout->addWidget(fontSizeLabel);
     controlsLayout->addWidget(fontSizeSpinBox);
@@ -64,29 +55,6 @@ MainWindow::MainWindow() {
     centralLayout->addLayout(controlsLayout);
     centralLayout->addWidget(editor, 1);
     centralWidget->setLayout(centralLayout);
-
-    string line;
-    string filepath = "/Users/ioneliabuzatu/CLionProjects/kisssBusySchedule/scrapped_data.txt";
-    ifstream myfile;
-
-    std::ifstream infile(filepath);
-
-    while (std::getline(infile, line)) {
-        vector<string> row_values;
-        vector<string> col_row_values;
-
-
-        split(line, ',', row_values);
-
-//        for (auto v: row_values)
-//            cout << v << ',';
-        split(row_values[2], '.', col_row_values);
-        cout << row_values[2];
-//        cout << col_row_va lues[0];
-        cout << endl;
-
-
-    }
 
     setCentralWidget(centralWidget);
 
@@ -157,15 +125,6 @@ void MainWindow::insertCalendar() {
         rowIndex++;
     }
 
-    int tmp = 5;
-    while (tmp > 0) {
-        QTextTableCell cell = table->cellAt(table->rows() - 1, tmp);
-        QTextCursor cellCursor = cell.firstCursorPosition();
-        cellCursor.insertText("hello", highlightedFormat);
-        tmp--;
-    }
-
-
     std::unordered_map<string, int> hourToRow = {
             {"08:00", 1},
             {"08:15", 1},
@@ -222,7 +181,7 @@ void MainWindow::insertCalendar() {
     };
 
     string line;
-    string filepath = "/Users/ioneliabuzatu/CLionProjects/kisssBusySchedule/scrapped_data.txt";
+    string filepath = "/Users/ioneliabuzatu/CLionProjects/kisssBusySchedule/scraped_data.txt";
     ifstream myfile;
     int col;
     std::ifstream infile(filepath);
@@ -286,14 +245,3 @@ void MainWindow::setFontSize(int size) {
     insertCalendar();
 }
 
-
-void MainWindow::setMonth(int month) {
-    selectedDate = QDate(selectedDate.year(), month + 1, selectedDate.day());
-    insertCalendar();
-}
-
-
-void MainWindow::setYear(QDate date) {
-    selectedDate = QDate(date.year(), selectedDate.month(), selectedDate.day());
-    insertCalendar();
-}
